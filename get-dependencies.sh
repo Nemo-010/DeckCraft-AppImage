@@ -35,6 +35,8 @@ git clone https://github.com/storytold/deckcraft.git ./deckcraft && (
 		git rev-parse --short HEAD > ~/version
 	fi
 
+	export CARGO_PROFILE_RELEASE_LTO=thin
+	export CARGO_PROFILE_RELEASE_PANIC=abort
 	cargo build --locked --release -p deckcraft -p deckcraft-cli
 
 	cp -v ./target/release/deckcraft ./target/release/deckcraft-cli /usr/bin
