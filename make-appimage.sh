@@ -10,6 +10,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/icons/hicolor/256x256/apps/ai.storyteller.deckcraft.png
 export DESKTOP=/usr/share/applications/ai.storyteller.deckcraft.desktop
 export DEPLOY_OPENGL=1
+export DEPLOY_PULSE=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/deckcraft /usr/bin/deckcraft-cli /usr/bin/zenity
