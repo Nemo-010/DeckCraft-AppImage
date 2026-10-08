@@ -26,14 +26,9 @@ echo "---------------------------------------------------------------"
 git clone https://github.com/storytold/deckcraft.git ./deckcraft && (
 	cd ./deckcraft
 
-	# No releases yet, so track the default branch until there are tags
 	TAG=$(git tag --sort=-v:refname | grep -vi 'rc\|alpha\|beta' | head -1)
-	if [ -n "$TAG" ]; then
-		git checkout "$TAG"
-		echo "${TAG#v}" > ~/version
-	else
-		git rev-parse --short HEAD > ~/version
-	fi
+	git checkout "$TAG"
+	echo "${TAG#v}" > ~/version
 
 	export CARGO_PROFILE_RELEASE_LTO=thin
 	export CARGO_PROFILE_RELEASE_PANIC=abort

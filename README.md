@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/DeckCraft-AppImage)](https://github.com/pkgforge-dev/DeckCraft-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/storytold/deckcraft/07dd1177e9ebc08dae95b1d1548e0c6204cc3fa9/assets/app-icon/deckcraft-1024.png" width="128" />
+  <img src="https://raw.githubusercontent.com/storytold/deckcraft/942a2c80cc5110f9c8640ffe1925600182ae2284/assets/app-icon/deckcraft-1024.png" width="128" />
 </p>
 
 
