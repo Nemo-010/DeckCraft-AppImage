@@ -30,6 +30,10 @@ git clone https://github.com/storytold/deckcraft.git ./deckcraft && (
 	git checkout "$TAG"
 	echo "${TAG#v}" > ~/version
 
+	# The AppImage is updated by its own package manager: drop the in-app release check, its
+	# "update available" prompt and the self-update that would replace this build.
+	git apply ../patches/0001-disable-update-checker.patch
+
 	export CARGO_PROFILE_RELEASE_LTO=thin
 	export CARGO_PROFILE_RELEASE_PANIC=abort
 	cargo build --locked --release -p deckcraft -p deckcraft-cli

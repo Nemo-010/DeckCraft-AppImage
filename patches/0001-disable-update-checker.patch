@@ -1,0 +1,34 @@
+diff --git a/crates/ui-egui/src/dialogs/updates_ui.rs b/crates/ui-egui/src/dialogs/updates_ui.rs
+index cdf2bf2..853344f 100644
+--- a/crates/ui-egui/src/dialogs/updates_ui.rs
++++ b/crates/ui-egui/src/dialogs/updates_ui.rs
+@@ -1,7 +1,7 @@
+ //! One background check at start-up (and on demand from Help) for a newer release, and the modal
+ //! prompt that offers to update and restart. The flow itself is `craft_update::updater::Updater`.
+ 
+-use craft_update::updater::{Action, Status, Updater};
++use craft_update::updater::{Action, Updater};
+ use craft_update::{CheckResultDialog, CheckResultResponse};
+ 
+ use crate::SlideApp;
+@@ -23,16 +23,13 @@ impl Default for Runtime {
+     }
+ }
+ 
+-pub(crate) fn enable(app: &mut SlideApp) {
+-    app.updates_rt.enabled = true;
++pub(crate) fn enable(_app: &mut SlideApp) {
++    // The AppImage is updated by its own package manager; no check is ever asked for.
+ }
+ 
+ /// Help > Check for Updates…: runs a check and reports the outcome either way.
+-pub(crate) fn request_check(app: &mut SlideApp) {
+-    if !matches!(app.updates_rt.updater.status(), Status::Checking) {
+-        app.updates_rt.check_requested = true;
+-        app.updates_rt.result_open = true;
+-    }
++pub(crate) fn request_check(_app: &mut SlideApp) {
++    // Help > Check for Updates would offer to replace this build with an upstream release.
+ }
+ 
+ pub(crate) fn tick(app: &mut SlideApp, ctx: &egui::Context) {
